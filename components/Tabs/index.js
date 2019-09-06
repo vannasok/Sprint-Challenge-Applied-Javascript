@@ -9,20 +9,20 @@
 //    <div class="tab">topic here</div>
 
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
-.then(response => {
-    console.log(response);
-    response.data.forEach( ele =>{
-        tab.textContent = ele;
-        tabBar.appendChild(tab(ele));
+// axios.get('https://lambda-times-backend.herokuapp.com/topics')
+// .then(response => {
+//     // console.log(response);
+//     response.data.forEach( ele =>{
+//         tab.textContent = ele;
+//         tabBar.appendChild(tab(ele));
 
-    })
-})
-.catch(err => {console.log('return failed.', err)})
+//     })
+// })
+// .catch(err => {console.log('return failed.', err)})
 
-const tabBar = document.querySelector('.topics');
-const tab = document.createElement('div');
-tab.classList.add('tab');
+// const tabBar = document.querySelector('.topics');
+// const tab = document.createElement('div');
+// tab.classList.add('tab');
 
 
 
