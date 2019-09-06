@@ -30,8 +30,8 @@ function Header() {
  headerTemp.classList.add('temp');
 
  headerTitle.textContent = 'Lambda Times';
- headerDate.textContent = 'September 6th, 2019';
- headerTemp.textContent = 80,'&deg;c';
+ headerDate.textContent = 'SMARCH 28, 2019';
+ headerTemp.textContent = '80°';
 
  return headerShowcase;
 
