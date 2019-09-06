@@ -17,3 +17,50 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+const dataArray = ['bootstrap','javascript','jquery','node','technology'];
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    console.log(response);
+    response.dataArray.forEach(ele => {
+        const newCard = createCard(ele);
+        cards.appendChild(newCard);
+
+    });
+
+
+})
+.catch(err => console.log('return failed.', err))
+
+
+
+const cards = document.querySelector('.cards-container');
+// cards.appendChild(createCard(data));
+
+function createCard (dataArray){
+
+    const
+    card = document.createElement('div');
+    cardHeadline = document.createElement('div');
+    cardAuthor = document.createElement('div');
+    cardImgContainer = document.createElement('div');
+    cardImg = document.createElement('img');
+    cardAuthorName = document.createElement('span');
+
+    card.appendChild(cardHeadline);
+    card.appendChild(cardAuthor);
+    cardAuthor.appendChild(cardImgContainer);
+    cardAuthor.appendChild(cardAuthorName);
+    cardImgContainer.appendChild(cardImg);
+
+    card.classList.add('card');
+    cardHeadline.classList.add('headline');
+    cardAuthor.classList.add('author');
+    cardImgContainer.classList.add('img-container');
+
+    cardHeadline.textContent = `${dataArray.headline}`;
+    cardImg.src = `${dataArray.authorPhoto}`;
+    cardAuthorName.textContent = `By: ${dataArray.authorName}`;
+
+    return card;
+}
