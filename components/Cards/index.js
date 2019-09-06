@@ -21,11 +21,11 @@ const dataArray = ['bootstrap','javascript','jquery','node','technology'];
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    console.log(response);
+    // console.log(response);
     
     for( let x in response.data.articles){
         
-        console.log(response.data.articles[x]);
+        // console.log(response.data.articles[x]);
         response.data.articles[x].forEach( ele =>{
             const newCard = createCard(ele);
             cards.appendChild(newCard);
